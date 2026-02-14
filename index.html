@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Nicole ❤️</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  color:white;
+  text-align:center;
+  background:black;
+  overflow-x:hidden;
+}
+
+/* 🌌 Fondo estrellas */
+.stars{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:url("https://i.imgur.com/9QZ7Z6F.png") repeat;
+  animation:moveStars 120s linear infinite;
+  z-index:-1;
+}
+
+@keyframes moveStars{
+  from{background-position:0 0;}
+  to{background-position:-10000px 5000px;}
+}
+
+/* 💬 Secciones */
+.section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s;
+}
+
+.section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h1{
+  font-size:45px;
+}
+
+p{
+  font-size:28px;
+}
+
+img{
+  width:260px;
+  border-radius:20px;
+  margin-top:20px;
+  box-shadow:0 0 25px rgba(255,255,255,0.4);
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Música -->
+<audio autoplay loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="stars"></div>
+
+<div class="section">
+  <h1>Nicole ❤️</h1>
+  <p>Desliza mi amor 🌌</p>
+</div>
+
+<div class="section"><p>Mi princesa ❤️</p></div>
+<div class="section"><p>Mi reina 👑✨</p></div>
+
+<div class="section">
+  <p>Mi mujer ❤️🥺</p>
+  <img src="foto1.jpg">
+</div>
+
+<div class="section"><p>La mejor ❤️‍🩹</p></div>
+
+<div class="section">
+  <p>Te amo 😍</p>
+  <img src="foto2.jpg">
+</div>
+
+<div class="section"><p>Gracias por hacerme felíz ✨👑</p></div>
+
+<div class="section">
+  <p>Mi vida contigo 💘</p>
+  <img src="foto3.jpg">
+</div>
+
+<div class="section"><p>Casemonos 🫣✨</p></div>
+
+<div class="section">
+  <h1>Para siempre tú y yo ❤️</h1>
+</div>
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
